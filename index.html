@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalkingPotato</title>
+    <style>
+        @keyframes TalkingPotato {
+            from {
+                    transform: rotate(-1deg);
+                }
+
+            to {
+                    transform: rotate(1deg);
+                }
+            }
+        /* 미세한 동공지진 효과 */
+        @keyframes eye {
+            from {
+                    transform: translateX(0px);
+                }
+
+            to {
+                    transform: translateX(2px);
+                }
+            }
+            
+        @keyframes mouth {
+            from {
+                transform: scale(0.5);
+            }
+
+            to {
+                transform: scaleY(2.2);
+            }
+        }
+
+        body {
+                margin: 100px;
+                padding: 0;
+                background-color: rgb(204, 139, 64);
+            }
+
+        .TalkingPotato {
+            animation: TalkingPotato 0.8s infinite alternate;
+            width: 500px;
+            height: 450px;
+            border-radius: 70% 45% 50% 50%;
+            border: 20px solid #000;
+            background: burlywood;
+        }
+
+        div[class^="face"] {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: black;
+        }
+
+        .face_1 {
+            top: 330px;
+            left: 80px;
+        }
+
+        .face_2 {
+            top: 130px;
+            left: 120px;
+        }
+
+        .face_3 {
+            top: 55px;
+            left: 260px;
+        }
+
+        .face_4 {
+            top: 110px;
+            left: 340px;
+        }
+
+        .face_5 {
+            top: 350px;
+            left: 400px;
+        }
+
+        .face_6 {
+            top: 420px;
+            left: 160px;
+        }
+
+        .eyes {
+            position:absolute;
+            top: 180px;
+        }
+
+        .eyeR {
+            display: inline-block;
+            margin-left: 100px;
+            width: 150px;
+            height: 60px;
+            border-radius: 47%;
+            border: 10px solid black;
+            background: white;
+        }
+
+        .eyeL {
+            display: inline-block;
+            margin-left: 20px;
+            width: 150px;
+            height: 60px;
+            border-radius: 46%;
+            border: 10px solid black;
+            background: white;
+        }
+
+        .R {
+            animation: eye 0.003s infinite alternate;
+            width: 110px;
+            height: 68px;
+            margin-top: -4px;
+            margin-left: 17px;
+            border-radius: 15%;
+            background: black;
+        }
+
+        .mouth {
+            animation: mouth 3s infinite alternate;
+            position: relative;
+            top: 300px;
+            left: 200px;
+            width: 150px;
+            height: 60px;
+            border-radius: 10% 10% 30% 30%;
+            background: rgb(241, 88, 88);
+        }
+    </style>
+</head>
+<body>
+    <div class="TalkingPotato">
+        <div class="face_1"></div>
+        <div class="face_2"></div>
+        <div class="face_3"></div>
+        <div class="face_4"></div>
+        <div class="face_5"></div>
+        <div class="face_6"></div>
+        <div class="eyes">
+            <div class="eyeR">
+                <div class="R"></div>
+            </div>
+            <div class="eyeL">
+                <div class="R"></div>
+            </div>    
+        </div>
+        <div class="mouth"></div>
+    </div>
+</body>
+</html>
