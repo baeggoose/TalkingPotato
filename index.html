@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Loading...</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .splash-img {
+        width: 100%;
+        max-width: 85%;
+        height: auto;
+        border-radius: 12px;
+        object-fit: cover;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+      }
+
+      .fade {
+        animation: fadein 0.5s ease-out;
+      }
+
+      @keyframes fadein {
+        from {
+          opacity: 0;
+          transform: scale(1.05);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    </style>
+
+    <script>
+      // 사용할 스플래시 이미지들
+      const images = [
+        "cake.jpg",
+        "ring.jpg",
+        "ring2.jpg",
+        "hands.jpg",
+        "hands2.jpg",
+      ];
+
+      // 랜덤 선택
+      const selected = images[Math.floor(Math.random() * images.length)];
+
+      // 페이지가 로드되면 이미지 삽입
+      window.onload = function () {
+        const img = document.getElementById("splash");
+        img.src = selected;
+        img.classList.add("fade");
+
+        // 약 0.8초 후 Netlify로 이동
+        setTimeout(() => {
+          window.location.replace(
+            "https://yjsj-wedding-day-0418-1220.netlify.app/"
+          );
+        }, 800);
+      };
+    </script>
+  </head>
+
+  <body>
+    <img id="splash" class="splash-img" />
+  </body>
+</html>
